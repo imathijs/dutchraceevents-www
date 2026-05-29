@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Dutch Race Events</title>
+        <meta
+            name="description"
+            content="Dutch Race Events: Gran Turismo racing community voor beginners en gevorderden."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --orange: #ff8900;
+                --ink: #06080d;
+                --white: #f7f7fb;
+                --muted: #b8bfca;
+                --line: rgba(255, 255, 255, 0.16);
+                --blue: #1d9cff;
+                --red: #ff253c;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                margin: 0;
+                background: #05070b;
+                color: var(--white);
+                font-family: Inter, system-ui, sans-serif;
+                overflow-x: hidden;
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            .wrap {
+                width: min(1180px, calc(100% - 40px));
+                margin-inline: auto;
+            }
+            .hero {
+                min-height: 100vh;
+                position: relative;
+                display: grid;
+                place-items: stretch;
+                background-image:
+                    linear-gradient(
+                        90deg,
+                        rgba(2, 6, 14, 0.97) 0%,
+                        rgba(2, 6, 14, 0.72) 32%,
+                        rgba(2, 6, 14, 0.22) 60%,
+                        rgba(2, 6, 14, 0.74) 100%
+                    ),
+                    linear-gradient(
+                        0deg,
+                        rgba(5, 7, 11, 1) 0%,
+                        rgba(5, 7, 11, 0) 28%
+                    ),
+                    url("assets/hero-bg.png");
+                background-size: cover;
+                background-position: center;
+                isolation: isolate;
+            }
+            .hero:before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background:
+                    radial-gradient(
+                        circle at 82% 42%,
+                        rgba(255, 37, 60, 0.25),
+                        transparent 30%
+                    ),
+                    radial-gradient(
+                        circle at 10% 50%,
+                        rgba(29, 156, 255, 0.22),
+                        transparent 35%
+                    );
+                mix-blend-mode: screen;
+                pointer-events: none;
+            }
+            .hero:after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    rgba(255, 255, 255, 0.035) 1px,
+                    transparent 1px
+                );
+                background-size: 100% 4px;
+                opacity: 0.25;
+                pointer-events: none;
+            }
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 20;
+                background: linear-gradient(
+                    180deg,
+                    rgba(5, 7, 11, 0.86),
+                    rgba(5, 7, 11, 0)
+                );
+                backdrop-filter: blur(6px);
+            }
+            nav {
+                height: 92px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 24px;
+            }
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                font-family: Oswald, sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+            .brand img {
+                width: 168px;
+                height: auto;
+                display: block;
+                filter: drop-shadow(0 0 14px rgba(255, 137, 0, 0.35));
+            }
+            .navlinks {
+                display: flex;
+                gap: 32px;
+                align-items: center;
+                font-family: Oswald, sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.09em;
+                font-size: 14px;
+            }
+            .navlinks a {
+                opacity: 0.82;
+            }
+            .navlinks a:hover {
+                color: var(--orange);
+                opacity: 1;
+            }
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                background: var(--orange);
+                color: white;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                padding: 17px 24px;
+                border: 1px solid rgba(255, 255, 255, 0.14);
+                box-shadow: 0 16px 36px rgba(255, 137, 0, 0.24);
+                clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%);
+            }
+            .btn.secondary {
+                background: rgba(255, 255, 255, 0.04);
+                box-shadow: none;
+            }
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                align-self: center;
+                padding: 132px 0 110px;
+            }
+            .eyebrow {
+                color: var(--orange);
+                font-family: Oswald, sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.16em;
+                font-weight: 700;
+            }
+            .hero h1 {
+                font-family: Oswald, sans-serif;
+                font-size: clamp(54px, 8vw, 118px);
+                line-height: 0.9;
+                margin: 18px 0 20px;
+                text-transform: uppercase;
+                max-width: 760px;
+                text-shadow: 0 12px 45px rgba(0, 0, 0, 0.6);
+            }
+            .lead {
+                font-size: clamp(17px, 2vw, 22px);
+                line-height: 1.55;
+                color: #e3e7ee;
+                max-width: 560px;
+            }
+            .cta-row {
+                display: flex;
+                gap: 14px;
+                margin-top: 34px;
+                flex-wrap: wrap;
+            }
+            .stats {
+                position: relative;
+                z-index: 2;
+                margin-top: 90px;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                border: 1px solid var(--line);
+                background: rgba(4, 8, 14, 0.56);
+                backdrop-filter: blur(12px);
+            }
+            .stat {
+                padding: 24px;
+                border-right: 1px solid var(--line);
+            }
+            .stat:last-child {
+                border-right: 0;
+            }
+            .stat b {
+                display: block;
+                font-family: Oswald, sans-serif;
+                text-transform: uppercase;
+                font-size: 20px;
+            }
+            .stat span {
+                color: var(--muted);
+                font-size: 14px;
+            }
+            .section {
+                padding: 105px 0;
+                position: relative;
+            }
+            .section h2 {
+                font-family: Oswald, sans-serif;
+                text-transform: uppercase;
+                font-size: clamp(38px, 5vw, 76px);
+                line-height: 0.95;
+                margin: 0 0 20px;
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 34px;
+                align-items: center;
+            }
+            .panel {
+                border: 1px solid var(--line);
+                background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.075),
+                    rgba(255, 255, 255, 0.025)
+                );
+                padding: 34px;
+                backdrop-filter: blur(10px);
+            }
+            .panel p {
+                color: #d2d7df;
+                line-height: 1.8;
+            }
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+                margin-top: 34px;
+            }
+            .card {
+                padding: 28px;
+                min-height: 220px;
+                background: linear-gradient(
+                    145deg,
+                    rgba(255, 137, 0, 0.16),
+                    rgba(255, 255, 255, 0.035)
+                );
+                border: 1px solid var(--line);
+                position: relative;
+                overflow: hidden;
+            }
+            .card:after {
+                content: "";
+                position: absolute;
+                right: -40px;
+                bottom: -40px;
+                width: 120px;
+                height: 120px;
+                border: 18px solid rgba(255, 137, 0, 0.16);
+                border-radius: 50%;
+            }
+            .card h3 {
+                font-family: Oswald, sans-serif;
+                text-transform: uppercase;
+                font-size: 28px;
+                margin: 0 0 12px;
+            }
+            .card p {
+                color: #cbd1db;
+                line-height: 1.65;
+            }
+            .track-box {
+                position: relative;
+                min-height: 460px;
+                border: 1px solid var(--line);
+                background:
+                    radial-gradient(
+                        circle at 50% 45%,
+                        rgba(255, 137, 0, 0.12),
+                        transparent 36%
+                    ),
+                    rgba(255, 255, 255, 0.03);
+                overflow: hidden;
+            }
+            .spa-map {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                inset: 0;
+            }
+            .track-line {
+                fill: none;
+                stroke: #777;
+                stroke-width: 28;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+            .track-glow {
+                fill: none;
+                stroke: var(--orange);
+                stroke-width: 8;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                filter: drop-shadow(0 0 12px rgba(255, 137, 0, 0.65));
+            }
+            .car {
+                fill: #fff;
+                filter: drop-shadow(0 0 13px var(--orange));
+            }
+            .calendar {
+                display: grid;
+                gap: 12px;
+            }
+            .race {
+                display: grid;
+                grid-template-columns: 120px 1fr auto;
+                gap: 18px;
+                align-items: center;
+                padding: 20px;
+                border: 1px solid var(--line);
+                background: rgba(255, 255, 255, 0.04);
+            }
+            .race time {
+                font-family: Oswald, sans-serif;
+                color: var(--orange);
+                font-size: 24px;
+            }
+            .race b {
+                font-family: Oswald, sans-serif;
+                text-transform: uppercase;
+                font-size: 22px;
+            }
+            .race span {
+                color: var(--muted);
+            }
+            footer {
+                border-top: 1px solid var(--line);
+                padding: 42px 0;
+                color: var(--muted);
+            }
+            .footer-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+            }
+            .footer-row img {
+                width: 142px;
+            }
+            @media (max-width: 880px) {
+                nav {
+                    height: 78px;
+                }
+                .navlinks {
+                    display: none;
+                }
+                .brand img {
+                    width: 130px;
+                }
+                .hero-content {
+                    padding-top: 118px;
+                }
+                .stats,
+                .grid,
+                .cards {
+                    grid-template-columns: 1fr;
+                }
+                .stat {
+                    border-right: 0;
+                    border-bottom: 1px solid var(--line);
+                }
+                .race {
+                    grid-template-columns: 1fr;
+                }
+                .track-box {
+                    min-height: 330px;
+                }
+                .footer-row {
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="wrap">
+                <nav>
+                    <a class="brand" href="#"
+                        ><img
+                            src="assets/DRE-wit.png"
+                            alt="Dutch Race Events logo"
+                    /></a>
+                    <div class="navlinks">
+                        <a href="#events">Events</a
+                        ><a href="#community">Community</a><a href="#spa">Spa</a
+                        ><a href="#kalender">Kalender</a
+                        ><a href="#contact">Contact</a>
+                    </div>
+                    <a
+                        class="btn"
+                        href="https://discord.gg/"
+                        target="_blank"
+                        rel="noreferrer"
+                        >Inschrijven</a
+                    >
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="hero">
+                <div class="wrap hero-content">
+                    <p class="eyebrow">Race. Compete. Win.</p>
+                    <h1>Beleef de ultieme race experience</h1>
+                    <p class="lead">
+                        Welkom bij Dutch Race Events. Gran Turismo is onze
+                        passie. Wij zijn de grootste én gezelligste online
+                        racevereniging van Nederland.
+                    </p>
+                    <div class="cta-row">
+                        <a class="btn" href="#kalender">Bekijk kalender</a
+                        ><a class="btn secondary" href="#events">Onze events</a>
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <b>Wekelijkse events</b
+                            ><span>Elke week nieuwe races</span>
+                        </div>
+                        <div class="stat">
+                            <b>Voor iedereen</b
+                            ><span>Van beginners tot gevorderden</span>
+                        </div>
+                        <div class="stat">
+                            <b>Community</b
+                            ><span>Gezellig, sportief en fanatiek</span>
+                        </div>
+                        <div class="stat">
+                            <b>Gran Turismo</b
+                            ><span>Professioneel georganiseerd</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="events">
+                <div class="wrap grid">
+                    <div>
+                        <p class="eyebrow">Dutch Race Events</p>
+                        <h2>Online racen met echte spanning</h2>
+                        <p class="lead">
+                            Van beginners tot gevorderde rijders: iedereen is
+                            welkom. Stap in, verbeter je racecraft en rijd mee
+                            in events die strak georganiseerd voelen, maar nooit
+                            hun gezelligheid verliezen.
+                        </p>
+                    </div>
+                    <div class="panel">
+                        <p>
+                            Zin om mee te doen? Meld je aan via Discord en
+                            ontdek de volgende races, kampioenschappen en
+                            community-avonden.
+                        </p>
+                        <div class="cta-row">
+                            <a
+                                class="btn"
+                                href="https://discord.gg/"
+                                target="_blank"
+                                rel="noreferrer"
+                                >Join Discord</a
+                            ><a class="btn secondary" href="#kalender"
+                                >Bekijk events</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap cards">
+                    <article class="card">
+                        <h3>Race</h3>
+                        <p>
+                            Competitieve online races met duidelijke regels,
+                            nette lobby’s en een fanatieke startgrid.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Improve</h3>
+                        <p>
+                            Leer circuits, racecraft, bandenmanagement en
+                            consistentie. Elke stint maakt je scherper.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Compete</h3>
+                        <p>
+                            Strijd in klassen en kampioenschappen waar
+                            sportiviteit net zo belangrijk is als snelheid.
+                        </p>
+                    </article>
+                </div>
+            </section>
+            <section class="section" id="spa">
+                <div class="wrap grid">
+                    <div class="track-box">
+                        <svg viewBox="0 0 1100 760" class="spa-map">
+                            <path
+                                id="spaPath"
+                                d="M90 585 L200 485 C235 455 270 430 300 400 C330 370 325 330 375 318 C430 306 420 305 485 260 C560 210 690 185 805 150 C875 128 925 105 965 115 C1005 125 1010 155 985 175 C960 195 1015 202 1035 250 C1055 300 1030 335 990 305 C955 280 930 255 900 260 C850 270 795 290 745 300 C705 308 700 350 705 390 C710 430 755 450 805 465 C850 478 900 500 930 520 C965 545 930 575 935 610 C940 650 1000 665 1010 700 C1018 730 985 760 945 742 C900 722 865 690 835 640 C805 590 790 550 750 520 C705 488 655 468 615 455 C575 442 545 465 500 482 C450 500 390 505 320 505 C300 505 315 480 305 475 C285 465 235 505 180 535 Z"
+                                class="track-line"
+                            />
+                            <path
+                                d="M90 585 L200 485 C235 455 270 430 300 400 C330 370 325 330 375 318 C430 306 420 305 485 260 C560 210 690 185 805 150 C875 128 925 105 965 115 C1005 125 1010 155 985 175 C960 195 1015 202 1035 250 C1055 300 1030 335 990 305 C955 280 930 255 900 260 C850 270 795 290 745 300 C705 308 700 350 705 390 C710 430 755 450 805 465 C850 478 900 500 930 520 C965 545 930 575 935 610 C940 650 1000 665 1010 700 C1018 730 985 760 945 742 C900 722 865 690 835 640 C805 590 790 550 750 520 C705 488 655 468 615 455 C575 442 545 465 500 482 C450 500 390 505 320 505 C300 505 315 480 305 475 C285 465 235 505 180 535 Z"
+                                class="track-glow"
+                            />
+                            <circle r="10" class="car">
+                                <animateMotion
+                                    dur="10s"
+                                    repeatCount="indefinite"
+                                    rotate="auto"
+                                >
+                                    <mpath href="#spaPath" />
+                                </animateMotion>
+                            </circle>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="eyebrow">Featured track</p>
+                        <h2>Spa wordt gereden</h2>
+                        <p class="lead">
+                            De site gebruikt een geanimeerde Spa-Francorchamps
+                            trackmap, zodat de racebeleving direct tot leven
+                            komt zodra je landt op de pagina.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="kalender">
+                <div class="wrap">
+                    <p class="eyebrow">Kalender</p>
+                    <h2>Volgende races</h2>
+                    <div class="calendar">
+                        <div class="race">
+                            <time>Woensdag</time>
+                            <div>
+                                <b>Community Race</b><br /><span
+                                    >Gran Turismo lobby voor alle niveaus</span
+                                >
+                            </div>
+                            <a
+                                class="btn secondary"
+                                href="https://discord.gg/"
+                                target="_blank"
+                                rel="noreferrer"
+                                >Aanmelden</a
+                            >
+                        </div>
+                        <div class="race">
+                            <time>Zondag</time>
+                            <div>
+                                <b>Championship Night</b><br /><span
+                                    >Competitief racen met sportiviteit
+                                    voorop</span
+                                >
+                            </div>
+                            <a
+                                class="btn secondary"
+                                href="https://discord.gg/"
+                                target="_blank"
+                                rel="noreferrer"
+                                >Aanmelden</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="contact">
+            <div class="wrap footer-row">
+                <img src="assets/dre-logo.png" alt="Dutch Race Events logo" />
+                <p>© 2026 Dutch Race Events. Gran Turismo is onze passie.</p>
+                <p>Discord · YouTube · Facebook</p>
+            </div>
+        </footer>
+    </body>
+</html>
