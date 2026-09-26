@@ -1,14 +1,39 @@
 <!doctype html>
-<html lang="nl">
+<html lang="nl-NL">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Dutch Race Events is de grootste en gezelligste online racevereniging van Nederland voor Gran Turismo-rijders van ieder niveau."
+      content="Race online in Gran Turismo met Dutch Race Events, de Nederlandse racecommunity voor beginners en ervaren coureurs. Sluit je aan via Discord."
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <meta name="theme-color" content="#05070b" />
-    <title>Dutch Race Events — Race. Compete. Win.</title>
+
+    <title>Online Gran Turismo racen | Dutch Race Events</title>
+    <link rel="canonical" href="https://www.dutchraceevents.com/" />
+    <link rel="alternate" hreflang="nl-NL" href="https://www.dutchraceevents.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.dutchraceevents.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:site_name" content="Dutch Race Events" />
+    <meta property="og:url" content="https://www.dutchraceevents.com/" />
+    <meta property="og:title" content="Online Gran Turismo racen | Dutch Race Events" />
+    <meta
+      property="og:description"
+      content="Doe mee met online Gran Turismo-races in een gezellige Nederlandse community voor ieder niveau."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Online Gran Turismo racen | Dutch Race Events" />
+    <meta
+      name="twitter:description"
+      content="Doe mee met online Gran Turismo-races in een gezellige Nederlandse community voor ieder niveau."
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,67 +46,219 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2305070b'/%3E%3Cpath d='M13 15h8v34h-8zm12 0h6v34h-6zm10 0h7c12 0 19 6 19 17S54 49 42 49h-7zm8 9v16c6 0 9-2 9-8s-3-8-9-8z' fill='%23ff8900'/%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SportsOrganization",
+            "@id": "https://www.dutchraceevents.com/#organization",
+            "name": "Dutch Race Events",
+            "alternateName": "DRE",
+            "url": "https://www.dutchraceevents.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.dutchraceevents.com/images/dre-logo.png",
+              "width": 409,
+              "height": 175
+            },
+            "description": "Nederlandse online racecommunity voor Gran Turismo-coureurs van ieder niveau.",
+            "sport": "Sim racing",
+            "sameAs": [
+              "https://www.youtube.com/@dutchraceevents8222",
+              "https://www.facebook.com/Dutchraceevents",
+              "https://discord.gg/yw3s2MVMx2"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.dutchraceevents.com/#website",
+            "url": "https://www.dutchraceevents.com/",
+            "name": "Dutch Race Events",
+            "inLanguage": "nl-NL",
+            "publisher": {
+              "@id": "https://www.dutchraceevents.com/#organization"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <main class="hero">
-      <div class="scanlines" aria-hidden="true"></div>
+    <main>
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="scanlines" aria-hidden="true"></div>
 
-      <header class="site-header">
-        <a class="brand" href="#top" aria-label="Dutch Race Events home">
-          <img src="assets/dre-logo.png" alt="Dutch Race Events" />
-        </a>
-        <a
-          class="header-cta"
-          href="https://discord.gg/yw3s2MVMx2"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Inschrijven
-        </a>
-      </header>
-
-      <section class="hero-content" id="top" aria-labelledby="hero-title">
-        <p class="eyebrow">Race. Compete. Win.</p>
-        <h1 id="hero-title">Beleef de race.</h1>
-        <p class="intro">
-          Gran Turismo is onze passie. Dutch Race Events is de grootste én
-          gezelligste online racevereniging van Nederland. Van beginners tot
-          gevorderde rijders: iedereen is welkom.
-        </p>
-
-        <nav class="actions" aria-label="Dutch Race Events kanalen">
+        <header class="site-header">
+          <a class="brand" href="#top" aria-label="Dutch Race Events home">
+            <img
+              src="assets/dre-logo.png"
+              width="409"
+              height="175"
+              alt="Logo van Dutch Race Events"
+            />
+          </a>
           <a
-            class="button button-primary"
+            class="header-cta"
             href="https://discord.gg/yw3s2MVMx2"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
-            <span>Rijd met ons mee</span>
-            <span aria-hidden="true">↗</span>
+            Inschrijven
           </a>
-          <a
-            class="button button-quiet"
-            href="https://www.youtube.com/@dutchraceevents8222"
-            target="_blank"
-            rel="noreferrer"
-          >
-            YouTube
-          </a>
-          <a
-            class="button button-quiet"
-            href="https://www.facebook.com/Dutchraceevents"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Facebook
-          </a>
-        </nav>
+        </header>
+
+        <div class="hero-content">
+          <p class="eyebrow">Race. Compete. Win.</p>
+          <h1 id="hero-title">Online Gran Turismo racen</h1>
+          <p class="intro">
+            Race online met Dutch Race Events: de grootste én gezelligste
+            Nederlandse Gran Turismo-racevereniging. Beginners en ervaren
+            coureurs zijn welkom om samen sneller, constanter en beter te racen.
+          </p>
+
+          <nav class="actions" aria-label="Dutch Race Events kanalen">
+            <a
+              class="button button-primary"
+              href="https://discord.gg/yw3s2MVMx2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Rijd met ons mee</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="button button-quiet"
+              href="https://www.youtube.com/@dutchraceevents8222"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              YouTube
+            </a>
+            <a
+              class="button button-quiet"
+              href="https://www.facebook.com/Dutchraceevents"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
+          </nav>
+        </div>
+
+        <a class="discover" href="#over-ons">Ontdek Dutch Race Events <span aria-hidden="true">↓</span></a>
       </section>
 
-      <footer class="site-footer">
-        <span>Online racing community</span>
-        <span>© 2026 Dutch Race Events</span>
-      </footer>
+      <section class="content-section" id="over-ons" aria-labelledby="about-title">
+        <div class="content-wrap split-intro">
+          <div>
+            <p class="section-label">Dutch Race Events</p>
+            <h2 id="about-title">Samen racen. Samen beter worden.</h2>
+          </div>
+          <div class="body-copy">
+            <p>
+              Dutch Race Events brengt Nederlandse Gran Turismo-spelers samen
+              voor online races waarin snelheid, sportiviteit en plezier centraal
+              staan. Je rijdt tegen echte tegenstanders, leert van andere coureurs
+              en ontwikkelt je racecraft in een actieve community.
+            </p>
+            <p>
+              Ervaring is niet vereist. Of je nu voor het eerst online racet of
+              al jarenlang op zoek bent naar die laatste tienden: je vindt bij ons
+              rijders van ieder niveau.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-wrap feature-grid" aria-label="Waarom Dutch Race Events">
+          <article class="feature-card">
+            <span class="feature-number">01</span>
+            <h3>Online Gran Turismo-races</h3>
+            <p>
+              Race vanuit huis mee in georganiseerde online races met duidelijke
+              afspraken en respect op de baan.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">02</span>
+            <h3>Voor ieder niveau</h3>
+            <p>
+              Beginners en gevorderde simracers delen dezelfde passie en helpen
+              elkaar om sneller en consistenter te worden.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">03</span>
+            <h3>Nederlandse community</h3>
+            <p>
+              Een betrokken racecommunity waar fanatiek rijden samengaat met een
+              gezellige en sportieve sfeer.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="join-section" aria-labelledby="join-title">
+        <div class="content-wrap join-grid">
+          <div>
+            <p class="section-label">Meedoen</p>
+            <h2 id="join-title">Jouw volgende race begint op Discord.</h2>
+          </div>
+          <div class="join-copy">
+            <p>
+              Word lid van de Dutch Race Events Discord-server. Daar ontmoet je
+              de community en vind je alle informatie die je nodig hebt om mee te
+              rijden.
+            </p>
+            <a
+              class="button button-primary join-button"
+              href="https://discord.gg/yw3s2MVMx2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Naar Discord <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="content-wrap faq-grid">
+          <div>
+            <p class="section-label">Veelgestelde vragen</p>
+            <h2 id="faq-title">Goed om te weten</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Wat is Dutch Race Events?</summary>
+              <p>
+                Dutch Race Events is een Nederlandse online racevereniging en
+                community voor spelers van Gran Turismo.
+              </p>
+            </details>
+            <details>
+              <summary>Kan ik als beginner meedoen?</summary>
+              <p>
+                Ja. Iedereen is welkom, van beginnende coureurs tot ervaren
+                simracers. Sportief en respectvol racen staat voorop.
+              </p>
+            </details>
+            <details>
+              <summary>Hoe kan ik mij inschrijven?</summary>
+              <p>
+                Meld je aan via onze Discord-server. Daar vind je de community en
+                de informatie om aan een race mee te doen.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <span>Online Gran Turismo-racecommunity</span>
+      <span>© 2026 Dutch Race Events</span>
+    </footer>
   </body>
 </html>
