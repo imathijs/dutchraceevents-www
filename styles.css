@@ -305,8 +305,10 @@ h2 {
   min-height: 270px;
   overflow: hidden;
   padding: 30px;
-  border: 1px solid var(--line);
-  background: linear-gradient(145deg, rgba(255, 137, 0, 0.12), rgba(255, 255, 255, 0.025));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background-color: #11151d;
+  background-image: linear-gradient(145deg, rgba(255, 137, 0, 0.16), rgba(17, 21, 29, 0) 58%);
+  box-shadow: inset 0 4px 0 var(--orange), 0 18px 40px rgba(0, 0, 0, 0.22);
 }
 
 .feature-card::after {
@@ -321,16 +323,22 @@ h2 {
 }
 
 .feature-number {
-  color: var(--orange);
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--orange);
+  color: #080b11;
   font-family: Oswald, "Arial Narrow", sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
 
 .feature-card h3 {
   max-width: 280px;
-  margin: 52px 0 14px;
+  margin: 34px 0 14px;
   font-size: 1.65rem;
   line-height: 1.08;
 }
@@ -422,7 +430,9 @@ details p {
 
 @media (max-width: 760px) {
   .hero {
-    padding-inline: 20px;
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-top: max(22px, env(safe-area-inset-top));
     background-image: linear-gradient(
       0deg,
       rgba(2, 6, 14, 1) 0%,
@@ -492,6 +502,10 @@ details p {
 
   .feature-card {
     min-height: 230px;
+    padding: 26px;
+    background-color: #11151d;
+    background-image: linear-gradient(145deg, rgba(255, 137, 0, 0.18), rgba(17, 21, 29, 0) 62%);
+    border-color: rgba(255, 255, 255, 0.28);
   }
 
   .feature-card h3 {
@@ -501,6 +515,14 @@ details p {
   .site-footer {
     flex-direction: column;
     gap: 8px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .feature-card {
+    background-color: #11151d;
+    border-color: rgba(255, 255, 255, 0.3);
+    -webkit-transform: translateZ(0);
   }
 }
 
